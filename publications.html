@@ -3,201 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications | Islam Taharimul</title>
+    <title>Publications — Islam Taharimul</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 :root {
-    --primary: #0f0f23;
-    --secondary: #1a1a2e;
-    --accent1: #e94560;
-    --accent2: #0f3460;
-    --accent3: #533483;
-    --text-primary: #f0f0f0;
-    --text-secondary: #a0a0b0;
-    --text-muted: #6a6a7a;
-    --glass: rgba(255,255,255,0.03);
-    --glass-border: rgba(255,255,255,0.08);
-    --card-bg: rgba(15,15,35,0.7);
+    --bg: #f5f2eb;
+    --bg-warm: #ede8dd;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #7a7a7a;
+    --text-light: #9a9a9a;
+    --accent: #8b4513;
+    --accent-warm: #a0522d;
+    --accent-soft: #d4a574;
+    --border: #e0d8cc;
+    --border-light: #ece6dc;
+    --shadow: rgba(0,0,0,0.06);
+    --shadow-hover: rgba(0,0,0,0.1);
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: var(--primary);
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background: var(--bg);
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.75;
     overflow-x: hidden;
     min-height: 100vh;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
 }
-.bg-canvas {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-    background: 
-        radial-gradient(ellipse at 20% 20%, rgba(233,69,96,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(83,52,131,0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(15,52,96,0.3) 0%, transparent 70%),
-        linear-gradient(135deg, #0f0f23 0%, #1a0a2e 25%, #0f1a3a 50%, #1a0a2e 75%, #0f0f23 100%);
-    animation: bgShift 20s ease-in-out infinite;
-}
-@keyframes bgShift {
-    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
-    33% { filter: hue-rotate(15deg) brightness(1.05); }
-    66% { filter: hue-rotate(-10deg) brightness(0.95); }
-}
-.orb {
-    position: fixed; border-radius: 50%; filter: blur(80px);
-    z-index: -1; opacity: 0.4; animation: floatOrb linear infinite;
-}
-.orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(233,69,96,0.6), transparent 70%); top: 10%; left: -5%; animation-duration: 25s; }
-.orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(83,52,131,0.6), transparent 70%); top: 60%; right: -5%; animation-duration: 30s; animation-delay: -10s; }
-.orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(15,52,96,0.7), transparent 70%); bottom: 10%; left: 40%; animation-duration: 35s; animation-delay: -5s; }
-.orb-4 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(233,69,96,0.4), transparent 70%); top: 40%; left: 60%; animation-duration: 28s; animation-delay: -15s; }
-@keyframes floatOrb {
-    0% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(50px, -30px) scale(1.1); }
-    50% { transform: translate(-30px, 50px) scale(0.9); }
-    75% { transform: translate(40px, 40px) scale(1.05); }
-    100% { transform: translate(0, 0) scale(1); }
-}
-.particles {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1; pointer-events: none; overflow: hidden;
-}
-.particle {
-    position: absolute; width: 3px; height: 3px;
-    background: rgba(255,255,255,0.3); border-radius: 50%;
-    animation: particleFloat linear infinite;
-}
-@keyframes particleFloat {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; } 90% { opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
 }
 .navbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center;
-    background: rgba(15,15,35,0.8); backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border); transition: all 0.3s ease;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: rgba(245,242,235,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
 }
 .nav-logo {
-    font-size: 1.4rem; font-weight: 700;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
 }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-logo span {
+    color: var(--accent);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
-    color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
-    font-weight: 500; letter-spacing: 0.5px; transition: all 0.3s ease;
-    position: relative; padding: 0.5rem 0;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
 }
 .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
-    transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.4s ease;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.section { padding: 6rem 3rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; }
-.section-title {
-    font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem;
-    position: relative; display: inline-block;
+.section { padding: 7rem 4rem 4rem; max-width: 1100px; margin: 0 auto; position: relative; }
+h1, h2, h3, h4 {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
 }
-.section-title::after {
-    content: ''; position: absolute; bottom: -10px; left: 0;
-    width: 60px; height: 4px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
-    border-radius: 2px;
+.section-title {
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -15px; left: 0;
+    width: 40px; height: 2px;
+    background: var(--accent);
 }
 .tag {
-    display: inline-block; padding: 0.3rem 0.8rem;
-    background: rgba(233,69,96,0.1); border: 1px solid rgba(233,69,96,0.2);
-    border-radius: 20px; font-size: 0.8rem; color: var(--accent1); margin: 0.2rem;
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0.2rem;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0.5px;
 }
 .footer {
-    padding: 3rem; text-align: center; border-top: 1px solid var(--glass-border);
-    margin-top: 4rem; color: var(--text-muted); font-size: 0.9rem;
+    padding: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
 }
-.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
 .social-link {
-    width: 44px; height: 44px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--glass); border: 1px solid var(--glass-border);
-    color: var(--text-secondary); text-decoration: none;
-    transition: all 0.3s ease; font-size: 1.1rem;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
-.social-link:hover {
-    background: var(--accent1); color: white; border-color: var(--accent1);
-    transform: translateY(-3px);
-}
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+.social-link:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--primary); }
-::-webkit-scrollbar-thumb { background: var(--accent3); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent1); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-soft); }
 
 /* PUBLICATIONS PAGE */
-.pub-hero { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
-.pub-hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
-.pub-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
-.pub-stats { display: flex; justify-content: center; gap: 3rem; margin-top: 2.5rem; flex-wrap: wrap; }
-.pub-stat { text-align: center; }
-.pub-stat-number { font-size: 2.2rem; font-weight: 700; color: var(--accent1); display: block; }
-.pub-stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.pub-list { display: flex; flex-direction: column; gap: 1.5rem; }
-.pub-item {
-    background: var(--card-bg); backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border); border-radius: 20px;
-    padding: 2rem 2.5rem; transition: all 0.4s ease;
-    position: relative; overflow: hidden;
-}
-.pub-item::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 4px; height: 100%; background: linear-gradient(180deg, var(--accent1), var(--accent3));
-}
-.pub-item:hover { transform: translateX(8px); border-color: rgba(233,69,96,0.3); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
-.pub-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; }
-.pub-title-main { font-size: 1.15rem; font-weight: 600; line-height: 1.5; flex: 1; padding-right: 1rem; }
-.pub-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.pub-badge {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    padding: 0.3rem 0.8rem; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 600;
-}
-.badge-first { background: rgba(233,69,96,0.15); color: var(--accent1); border: 1px solid rgba(233,69,96,0.3); }
-.badge-co { background: rgba(83,52,131,0.15); color: #a78bfa; border: 1px solid rgba(83,52,131,0.3); }
-.badge-third { background: rgba(15,52,96,0.15); color: #60a5fa; border: 1px solid rgba(15,52,96,0.3); }
-.pub-venue-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
-.pub-venue-name { font-size: 0.95rem; color: var(--accent1); font-weight: 500; }
-.pub-venue-publisher { font-size: 0.85rem; color: var(--text-muted); padding: 0.2rem 0.6rem; background: var(--glass); border-radius: 6px; }
-.pub-abstract { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; margin-top: 0.5rem; }
-.pub-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--glass-border); flex-wrap: wrap; gap: 0.5rem; }
-.pub-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.pub-link { color: var(--accent1); text-decoration: none; font-size: 0.85rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.4rem; transition: all 0.3s ease; }
-.pub-link:hover { gap: 0.7rem; }
-.research-banner {
-    background: linear-gradient(135deg, rgba(233,69,96,0.1), rgba(83,52,131,0.1));
-    border: 1px solid var(--glass-border); border-radius: 20px;
-    padding: 2.5rem; margin-bottom: 3rem; text-align: center;
-}
-.research-banner h3 { font-size: 1.3rem; margin-bottom: 1rem; }
-.research-banner p { color: var(--text-secondary); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.7; }
-.research-areas { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.page-header { padding-top: 8rem; padding-bottom: 2rem; max-width: 1100px; margin: 0 auto; padding-left: 4rem; padding-right: 4rem; }
+.page-header h1 { font-size: 3rem; font-weight: 400; margin-bottom: 0.5rem; }
+.page-header p { font-style: italic; color: var(--text-muted); font-size: 1.1rem; }
+.stats-bar { display: flex; justify-content: center; gap: 4rem; padding: 2rem 0; margin-bottom: 3rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.stat-item { text-align: center; }
+.stat-num { font-size: 2.5rem; font-weight: 400; color: var(--accent); display: block; line-height: 1; }
+.stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.5rem; }
+.focus-box { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; margin-bottom: 3rem; text-align: center; }
+.focus-box h3 { font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; color: var(--accent); }
+.focus-box p { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; max-width: 700px; margin: 0 auto 1.5rem; }
+.focus-tags { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; }
+.pub-list { display: flex; flex-direction: column; gap: 0; }
+.pub-entry { padding: 2rem 0; border-bottom: 1px solid var(--border-light); transition: all 0.3s ease; position: relative; }
+.pub-entry:hover { background: var(--bg-card); padding-left: 1.5rem; padding-right: 1.5rem; margin: 0 -1.5rem; }
+.pub-entry::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.4s ease; }
+.pub-entry:hover::before { width: 100%; }
+.pub-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem; }
+.pub-title { font-size: 1.1rem; font-weight: 400; line-height: 1.5; color: var(--text-primary); flex: 1; padding-right: 1rem; }
+.pub-badge { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.6rem; border: 1px solid var(--border); color: var(--text-muted); white-space: nowrap; }
+.pub-badge.first { color: var(--accent); border-color: var(--accent-soft); }
+.pub-badge.co { color: var(--text-muted); }
+.pub-badge.third { color: var(--text-muted); }
+.pub-venue-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.pub-venue { font-size: 0.9rem; color: var(--accent); font-style: italic; }
+.pub-publisher { font-size: 0.8rem; color: var(--text-muted); }
+.pub-abstract { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin-top: 0.8rem; }
+.pub-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+.pub-link { font-size: 0.85rem; color: var(--accent); text-decoration: none; font-style: italic; transition: all 0.3s ease; }
+.pub-link:hover { color: var(--text-primary); }
 @media (max-width: 768px) {
+    .page-header { padding: 6rem 1.5rem 2rem; }
+    .stats-bar { gap: 2rem; }
+    .section { padding: 3rem 1.5rem; }
+    .pub-header { flex-direction: column; }
     .navbar { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .section { padding: 5rem 1.5rem 3rem; }
     .section-title { font-size: 2rem; }
-    .pub-header { flex-direction: column; }
 }
     </style>
 </head>
 <body>
-    <div class="bg-canvas"></div>
-    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
-    <div class="particles"></div>
-
     <nav class="navbar">
-        <div class="nav-logo">Taharimul</div>
+        <a href="index.html" class="nav-logo">Taharimul <span>Islam</span></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -208,22 +208,30 @@ body {
         </ul>
     </nav>
 
-    <div class="pub-hero section">
+    <div class="page-header">
         <h1 class="reveal">Publications</h1>
-        <p class="reveal">Peer-reviewed contributions to the fields of computational intelligence, optimization algorithms, and IoT systems.</p>
-        <div class="pub-stats reveal">
-            <div class="pub-stat"><span class="pub-stat-number">6</span><span class="pub-stat-label">Publications</span></div>
-            <div class="pub-stat"><span class="pub-stat-number">4</span><span class="pub-stat-label">First Author</span></div>
-            <div class="pub-stat"><span class="pub-stat-number">3</span><span class="pub-stat-label">Journals</span></div>
-            <div class="pub-stat"><span class="pub-stat-number">2</span><span class="pub-stat-label">Conferences</span></div>
-        </div>
+        <p class="reveal">Peer-reviewed contributions to computational intelligence, optimization algorithms, and IoT systems.</p>
     </div>
 
     <section class="section">
-        <div class="research-banner reveal">
-            <h3><i class="fas fa-microscope" style="color:var(--accent1);margin-right:0.5rem;"></i> Research Focus</h3>
-            <p>My research centers on <strong>metaheuristic optimization algorithms</strong>, with a particular emphasis on <strong>Differential Evolution (DE)</strong> variants. I investigate adaptive parameter control, hybrid operator design, and success-history based mechanisms to enhance convergence speed and solution quality on complex multimodal and real-world optimization landscapes.</p>
-            <div class="research-areas">
+        <div class="stats-bar reveal">
+            <div class="stat-item"><span class="stat-num">6</span><span class="stat-label">Publications</span></div>
+            <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">First Author</span></div>
+            <div class="stat-item"><span class="stat-num">3</span><span class="stat-label">Journals</span></div>
+            <div class="stat-item"><span class="stat-num">2</span><span class="stat-label">Conferences</span></div>
+        </div>
+
+        <div class="focus-box reveal">
+            <h3>Research Focus</h3>
+            <p>My research centers on <strong>metaheuristic optimization algorithms</strong>, with a  The message got cut off again. Let me continue with the rest of `publications.html` and the remaining files.
+
+---
+
+**Continuing `publications.html`:**
+
+```html
+            particular emphasis on <strong>Differential Evolution (DE)</strong> variants. I investigate adaptive parameter control, hybrid operator design, and success-history based mechanisms to enhance convergence speed and solution quality on complex multimodal and real-world optimization landscapes.</p>
+            <div class="focus-tags">
                 <span class="tag">Differential Evolution</span>
                 <span class="tag">Particle Swarm Optimization</span>
                 <span class="tag">Adaptive Parameter Control</span>
@@ -231,110 +239,127 @@ body {
                 <span class="tag">IoT Systems</span>
             </div>
         </div>
-    </section>
 
-    <section class="section">
         <h2 class="section-title reveal">Complete Publication List</h2>
+        <div class="divider"></div>
+
         <div class="pub-list reveal">
-            <div class="pub-item">
+            <div class="pub-entry">
                 <div class="pub-header">
-                    <div class="pub-title-main">Improving Differential Evolution with Dual Operators and Success History Based Parameter Adaption</div>
-                    <div class="pub-badges"><span class="pub-badge badge-first"><i class="fas fa-star"></i> 1st Author</span></div>
+                    <div class="pub-title">Improving Differential Evolution with Dual Operators and Success History Based Parameter Adaption</div>
+                    <span class="pub-badge first">First Author</span>
                 </div>
                 <div class="pub-venue-row">
-                    <span class="pub-venue-name"><i class="fas fa-journal-whills"></i> Applied Soft Computing</span>
-                    <span class="pub-venue-publisher">Elsevier</span>
+                    <span class="pub-venue">Applied Soft Computing</span>
+                    <span class="pub-publisher">Elsevier</span>
                 </div>
                 <div class="pub-abstract">Proposes a novel DE variant integrating dual mutation operators with success-history adaptive parameter control, demonstrating superior performance on CEC benchmark suites and real-world engineering problems.</div>
                 <div class="pub-footer">
-                    <div class="pub-tags"><span class="tag">Differential Evolution</span><span class="tag">SHADE</span><span class="tag">Parameter Adaptation</span></div>
-                    <a href="#" class="pub-link">View Paper <i class="fas fa-external-link-alt"></i></a>
+                    <div>
+                        <span class="tag">Differential Evolution</span>
+                        <span class="tag">SHADE</span>
+                        <span class="tag">Parameter Adaptation</span>
+                    </div>
+                    <a href="#" class="pub-link">View Paper &rarr;</a>
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-entry">
                 <div class="pub-header">
-                    <div class="pub-title-main">An Enhanced Differential Evolution Algorithm Based on Modified SHADE</div>
-                    <div class="pub-badges"><span class="pub-badge badge-first"><i class="fas fa-star"></i> 1st Author</span></div>
+                    <div class="pub-title">An Enhanced Differential Evolution Algorithm Based on Modified SHADE</div>
+                    <span class="pub-badge first">First Author</span>
                 </div>
                 <div class="pub-venue-row">
-                    <span class="pub-venue-name"><i class="fas fa-journal-whills"></i> Journal of Applied Mathematics and Computing</span>
-                    <span class="pub-venue-publisher">Springer</span>
+                    <span class="pub-venue">Journal of Applied Mathematics and Computing</span>
+                    <span class="pub-publisher">Springer</span>
                 </div>
                 <div class="pub-abstract">Introduces modifications to the SHADE framework that improve population diversity maintenance and convergence reliability across complex multimodal optimization landscapes.</div>
                 <div class="pub-footer">
-                    <div class="pub-tags"><span class="tag">SHADE</span><span class="tag">Population Diversity</span><span class="tag">Convergence</span></div>
-                    <a href="#" class="pub-link">View Paper <i class="fas fa-external-link-alt"></i></a>
+                    <div>
+                        <span class="tag">SHADE</span>
+                        <span class="tag">Population Diversity</span>
+                        <span class="tag">Convergence</span>
+                    </div>
+                    <a href="#" class="pub-link">View Paper &rarr;</a>
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-entry">
                 <div class="pub-header">
-                    <div class="pub-title-main">Adaptive Crossover Selection for Differential Evolution to Solve Global Optimization Problems</div>
-                    <div class="pub-badges"><span class="pub-badge badge-first"><i class="fas fa-star"></i> 1st Author</span></div>
+                    <div class="pub-title">Adaptive Crossover Selection for Differential Evolution to Solve Global Optimization Problems</div>
+                    <span class="pub-badge first">First Author</span>
                 </div>
                 <div class="pub-venue-row">
-                    <span class="pub-venue-name"><i class="fas fa-users"></i> IEEE 12th ICIP</span>
-                    <span class="pub-venue-publisher">IEEE Conference</span>
+                    <span class="pub-venue">IEEE 12th ICIP</span>
+                    <span class="pub-publisher">IEEE Conference</span>
                 </div>
                 <div class="pub-abstract">Presents an adaptive crossover selection mechanism that dynamically chooses between multiple crossover strategies based on historical performance, significantly improving DE's robustness across problem classes.</div>
                 <div class="pub-footer">
-                    <div class="pub-tags"><span class="tag">Crossover Selection</span><span class="tag">Adaptive Strategy</span><span class="tag">Global Optimization</span></div>
-                    <a href="#" class="pub-link">View Paper <i class="fas fa-external-link-alt"></i></a>
+                    <div>
+                        <span class="tag">Crossover Selection</span>
+                        <span class="tag">Adaptive Strategy</span>
+                        <span class="tag">Global Optimization</span>
+                    </div>
+                    <a href="#" class="pub-link">View Paper &rarr;</a>
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-entry">
                 <div class="pub-header">
- The message got cut off. Let me continue with the rest of `publications.html` and the remaining files.
-
----
-
-**Continuing `publications.html`:**
-
-```html
-                    <div class="pub-title-main">A Comprehensive Review of DE for Advanced Optimization with Adaptive and Hybrid Approaches</div>
-                    <div class="pub-badges"><span class="pub-badge badge-co"><i class="fas fa-users"></i> Co-author</span></div>
+                    <div class="pub-title">A Comprehensive Review of DE for Advanced Optimization with Adaptive and Hybrid Approaches</div>
+                    <span class="pub-badge co">Co-author</span>
                 </div>
                 <div class="pub-venue-row">
-                    <span class="pub-venue-name"><i class="fas fa-journal-whills"></i> Computing in Science and Engineering</span>
-                    <span class="pub-venue-publisher">IEEE</span>
+                    <span class="pub-venue">Computing in Science and Engineering</span>
+                    <span class="pub-publisher">IEEE</span>
                 </div>
                 <div class="pub-abstract">A comprehensive survey reviewing the evolution of Differential Evolution, categorizing adaptive and hybrid variants, and identifying future research directions in computational intelligence.</div>
                 <div class="pub-footer">
-                    <div class="pub-tags"><span class="tag">Survey</span><span class="tag">Review</span><span class="tag">Hybrid Approaches</span></div>
-                    <a href="#" class="pub-link">View Paper <i class="fas fa-external-link-alt"></i></a>
+                    <div>
+                        <span class="tag">Survey</span>
+                        <span class="tag">Review</span>
+                        <span class="tag">Hybrid Approaches</span>
+                    </div>
+                    <a href="#" class="pub-link">View Paper &rarr;</a>
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-entry">
                 <div class="pub-header">
-                    <div class="pub-title-main">Enhancing Medication Adherence Using IoT Technology</div>
-                    <div class="pub-badges"><span class="pub-badge badge-first"><i class="fas fa-star"></i> 1st Author</span></div>
+                    <div class="pub-title">Enhancing Medication Adherence Using IoT Technology</div>
+                    <span class="pub-badge first">First Author</span>
                 </div>
                 <div class="pub-venue-row">
-                    <span class="pub-venue-name"><i class="fas fa-journal-whills"></i> European Journal of Electrical Engineering and Computer Science</span>
+                    <span class="pub-venue">European Journal of Electrical Engineering and Computer Science</span>
                 </div>
                 <div class="pub-abstract">Designs and evaluates an IoT-based smart medication reminder system that improves patient adherence through automated alerts, real-time monitoring, and caregiver integration.</div>
                 <div class="pub-footer">
-                    <div class="pub-tags"><span class="tag">IoT</span><span class="tag">Healthcare</span><span class="tag">Smart Systems</span></div>
-                    <a href="#" class="pub-link">View Paper <i class="fas fa-external-link-alt"></i></a>
+                    <div>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">Smart Systems</span>
+                    </div>
+                    <a href="#" class="pub-link">View Paper &rarr;</a>
                 </div>
             </div>
 
-            <div class="pub-item">
+            <div class="pub-entry">
                 <div class="pub-header">
-                    <div class="pub-title-main">Marine oil spill detection method based on combined polarization features and contour regularization</div>
-                    <div class="pub-badges"><span class="pub-badge badge-third"><i class="fas fa-users"></i> 3rd Author</span></div>
+                    <div class="pub-title">Marine oil spill detection method based on combined polarization features and contour regularization</div>
+                    <span class="pub-badge third">Third Author</span>
                 </div>
                 <div class="pub-venue-row">
-                    <span class="pub-venue-name"><i class="fas fa-journal-whills"></i> IEEE Journal of Oceanic Engineering</span>
-                    <span class="pub-venue-publisher">IEEE</span>
+                    <span class="pub-venue">IEEE Journal of Oceanic Engineering</span>
+                    <span class="pub-publisher">IEEE</span>
                 </div>
                 <div class="pub-abstract">Develops a novel marine oil spill detection approach leveraging combined polarization SAR features with contour regularization techniques for improved detection accuracy in ocean monitoring.</div>
                 <div class="pub-footer">
-                    <div class="pub-tags"><span class="tag">SAR</span><span class="tag">Oil Spill Detection</span><span class="tag">Remote Sensing</span></div>
-                    <a href="#" class="pub-link">View Paper <i class="fas fa-external-link-alt"></i></a>
+                    <div>
+                        <span class="tag">SAR</span>
+                        <span class="tag">Oil Spill Detection</span>
+                        <span class="tag">Remote Sensing</span>
+                    </div>
+                    <a href="#" class="pub-link">View Paper &rarr;</a>
                 </div>
             </div>
         </div>
@@ -348,23 +373,10 @@ body {
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
             <a href="mailto:mtaharimulchina@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>Islam Taharimul &copy; 2025. Effort meets opportunity.</p>
+        <p>Islam Taharimul &mdash; 2025. Effort meets opportunity.</p>
     </footer>
 
     <script>
-function createParticles() {
-    const container = document.querySelector('.particles');
-    if (!container) return;
-    for (let i = 0; i < 50; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-        p.style.animationDelay = (Math.random() * 10) + 's';
-        p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
-        container.appendChild(p);
-    }
-}
 function initReveal() {
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -378,20 +390,7 @@ function setActiveNav() {
         if (link.getAttribute('href') === currentPage) link.classList.add('active');
     });
 }
-function navbarScroll() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15,15,35,0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
-        } else {
-            navbar.style.background = 'rgba(15,15,35,0.8)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-}
-document.addEventListener('DOMContentLoaded', () => { createParticles(); initReveal(); setActiveNav(); navbarScroll(); });
+document.addEventListener('DOMContentLoaded', () => { initReveal(); setActiveNav(); });
     </script>
 </body>
 </html>
