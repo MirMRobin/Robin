@@ -3,254 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Islam Taharimul | AI Researcher & Engineer</title>
+    <title>Islam Taharimul — AI Researcher & Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 :root {
-    --primary: #0f0f23;
-    --secondary: #1a1a2e;
-    --accent1: #e94560;
-    --accent2: #0f3460;
-    --accent3: #533483;
-    --text-primary: #f0f0f0;
-    --text-secondary: #a0a0b0;
-    --text-muted: #6a6a7a;
-    --glass: rgba(255,255,255,0.03);
-    --glass-border: rgba(255,255,255,0.08);
-    --card-bg: rgba(15,15,35,0.7);
+    --bg: #f5f2eb;
+    --bg-warm: #ede8dd;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #7a7a7a;
+    --text-light: #9a9a9a;
+    --accent: #8b4513;
+    --accent-warm: #a0522d;
+    --accent-soft: #d4a574;
+    --border: #e0d8cc;
+    --border-light: #ece6dc;
+    --shadow: rgba(0,0,0,0.06);
+    --shadow-hover: rgba(0,0,0,0.1);
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: var(--primary);
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background: var(--bg);
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.75;
     overflow-x: hidden;
     min-height: 100vh;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
 }
-.bg-canvas {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -2;
-    background: 
-        radial-gradient(ellipse at 20% 20%, rgba(233,69,96,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(83,52,131,0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(15,52,96,0.3) 0%, transparent 70%),
-        linear-gradient(135deg, #0f0f23 0%, #1a0a2e 25%, #0f1a3a 50%, #1a0a2e 75%, #0f0f23 100%);
-    animation: bgShift 20s ease-in-out infinite;
-}
-@keyframes bgShift {
-    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
-    33% { filter: hue-rotate(15deg) brightness(1.05); }
-    66% { filter: hue-rotate(-10deg) brightness(0.95); }
-}
-.orb {
-    position: fixed; border-radius: 50%; filter: blur(80px);
-    z-index: -1; opacity: 0.4; animation: floatOrb linear infinite;
-}
-.orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(233,69,96,0.6), transparent 70%); top: 10%; left: -5%; animation-duration: 25s; }
-.orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(83,52,131,0.6), transparent 70%); top: 60%; right: -5%; animation-duration: 30s; animation-delay: -10s; }
-.orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(15,52,96,0.7), transparent 70%); bottom: 10%; left: 40%; animation-duration: 35s; animation-delay: -5s; }
-.orb-4 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(233,69,96,0.4), transparent 70%); top: 40%; left: 60%; animation-duration: 28s; animation-delay: -15s; }
-@keyframes floatOrb {
-    0% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(50px, -30px) scale(1.1); }
-    50% { transform: translate(-30px, 50px) scale(0.9); }
-    75% { transform: translate(40px, 40px) scale(1.05); }
-    100% { transform: translate(0, 0) scale(1); }
-}
-.particles {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1; pointer-events: none; overflow: hidden;
-}
-.particle {
-    position: absolute; width: 3px; height: 3px;
-    background: rgba(255,255,255,0.3); border-radius: 50%;
-    animation: particleFloat linear infinite;
-}
-@keyframes particleFloat {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; } 90% { opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
 }
 .navbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center;
-    background: rgba(15,15,35,0.8); backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border); transition: all 0.3s ease;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: rgba(245,242,235,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
 }
 .nav-logo {
-    font-size: 1.4rem; font-weight: 700;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
 }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-logo span {
+    color: var(--accent);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
-    color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
-    font-weight: 500; letter-spacing: 0.5px; transition: all 0.3s ease;
-    position: relative; padding: 0.5rem 0;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
 }
 .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
-    transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.4s ease;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.glass-card {
-    background: var(--card-bg); backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border); border-radius: 16px; padding: 2rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.section { padding: 7rem 4rem 4rem; max-width: 1100px; margin: 0 auto; position: relative; }
+.section-narrow { max-width: 800px; }
+h1, h2, h3, h4 {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
 }
-.glass-card:hover {
-    transform: translateY(-5px); border-color: rgba(233,69,96,0.3);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 30px rgba(233,69,96,0.1);
-}
-.section { padding: 6rem 3rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; }
 .section-title {
-    font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem;
-    position: relative; display: inline-block;
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
 }
-.section-title::after {
-    content: ''; position: absolute; bottom: -10px; left: 0;
-    width: 60px; height: 4px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
-    border-radius: 2px;
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -15px; left: 0;
+    width: 40px; height: 2px;
+    background: var(--accent);
+}
+.section-subtitle {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+.divider { width: 60px; height: 1px; background: var(--accent); margin: 2rem 0; }
+.divider-center { margin: 2rem auto; }
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+    position: relative;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 0;
+    background: var(--accent);
+    transition: height 0.4s ease;
+}
+.card:hover { box-shadow: 0 10px 40px var(--shadow-hover); transform: translateY(-2px); }
+.card:hover::before { height: 100%; }
+.tag {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0.2rem;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0.5px;
 }
 .btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.9rem 2rem; border-radius: 50px; font-size: 0.95rem;
-    font-weight: 600; text-decoration: none; cursor: pointer;
-    transition: all 0.3s ease; border: none; letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 2rem;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent);
+    letter-spacing: 1px;
+    background: transparent;
+    color: var(--accent);
 }
-.btn-primary {
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    color: white; box-shadow: 0 4px 15px rgba(233,69,96,0.3);
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(233,69,96,0.4); }
-.btn-outline {
-    background: transparent; color: var(--text-primary);
-    border: 2px solid var(--glass-border);
-}
-.btn-outline:hover { border-color: var(--accent1); color: var(--accent1); }
-.tag {
-    display: inline-block; padding: 0.3rem 0.8rem;
-    background: rgba(233,69,96,0.1); border: 1px solid rgba(233,69,96,0.2);
-    border-radius: 20px; font-size: 0.8rem; color: var(--accent1); margin: 0.2rem;
-}
+.btn:hover { background: var(--accent); color: var(--bg); }
+.btn-solid { background: var(--accent); color: var(--bg); }
+.btn-solid:hover { background: var(--text-primary); border-color: var(--text-primary); }
 .footer {
-    padding: 3rem; text-align: center; border-top: 1px solid var(--glass-border);
-    margin-top: 4rem; color: var(--text-muted); font-size: 0.9rem;
+    padding: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
 }
-.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
 .social-link {
-    width: 44px; height: 44px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--glass); border: 1px solid var(--glass-border);
-    color: var(--text-secondary); text-decoration: none;
-    transition: all 0.3s ease; font-size: 1.1rem;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
-.social-link:hover {
-    background: var(--accent1); color: white; border-color: var(--accent1);
-    transform: translateY(-3px);
-}
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+.social-link:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--primary); }
-::-webkit-scrollbar-thumb { background: var(--accent3); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent1); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-soft); }
 
-/* HERO */
-.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 6rem 3rem 4rem; position: relative; overflow: hidden; }
-.hero-content { text-align: center; max-width: 900px; z-index: 1; }
-.hero-badge {
-    display: inline-block; padding: 0.5rem 1.2rem;
-    background: rgba(233,69,96,0.1); border: 1px solid rgba(233,69,96,0.3);
-    border-radius: 50px; font-size: 0.85rem; color: var(--accent1);
-    margin-bottom: 2rem; animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%, 100% { opacity: 0.8; } 50% { opacity: 1; box-shadow: 0 0 20px rgba(233,69,96,0.2); } }
-.hero-name {
-    font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #fff 0%, #e94560 50%, #533483 100%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    animation: gradientText 8s ease-in-out infinite;
-}
-@keyframes gradientText { 0%, 100% { filter: hue-rotate(0deg); } 50% { filter: hue-rotate(20deg); } }
-.hero-title { font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 1rem; font-weight: 400; }
-.hero-motto { font-size: 1.1rem; color: var(--text-muted); font-style: italic; margin-bottom: 2.5rem; position: relative; display: inline-block; }
-.hero-motto::before, .hero-motto::after { content: '"'; color: var(--accent1); font-size: 1.5rem; font-weight: 700; }
-.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
-.hero-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
-.stat-item { text-align: center; }
-.stat-number { font-size: 2.5rem; font-weight: 700; color: var(--accent1); display: block; }
-.stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.hero-avatar {
-    width: 160px; height: 160px; border-radius: 50%; margin: 0 auto 2rem;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3rem; color: white; border: 4px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(233,69,96,0.3); position: relative; overflow: hidden;
-}
-.hero-avatar::before {
-    content: ''; position: absolute; inset: -10px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    opacity: 0.3; animation: avatarGlow 3s ease-in-out infinite;
-}
-@keyframes avatarGlow { 0%, 100% { transform: scale(1); opacity: 0.3; } 50% { transform: scale(1.05); opacity: 0.5; } }
-.quick-info { padding: 4rem 3rem; max-width: 1200px; margin: 0 auto; }
-.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-.info-card {
-    background: var(--card-bg); backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem;
-    transition: all 0.4s ease;
-}
-.info-card:hover { transform: translateY(-5px); border-color: rgba(233,69,96,0.3); }
-.info-icon {
-    width: 48px; height: 48px; border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 1.2rem; margin-bottom: 1rem;
-}
-.info-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
-.info-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; }
-.featured { padding: 4rem 3rem; max-width: 1200px; margin: 0 auto; }
-.featured-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-.pub-card {
-    background: var(--card-bg); backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border); border-radius: 16px; padding: 1.5rem;
-    margin-bottom: 1rem; transition: all 0.4s ease; border-left: 3px solid var(--accent1);
-}
-.pub-card:hover { transform: translateX(5px); border-color: rgba(233,69,96,0.3); }
-.pub-title { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4; }
-.pub-venue { font-size: 0.85rem; color: var(--accent1); font-weight: 500; }
+/* HOME PAGE */
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 4rem; max-width: 1100px; margin: 0 auto; position: relative; }
+.hero-top { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; margin-bottom: 4rem; }
+.hero-left { position: sticky; top: 120px; }
+.hero-portrait { width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--bg-warm), var(--border)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--text-light); position: relative; overflow: hidden; }
+.hero-portrait img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); }
+.hero-portrait-caption { margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted); font-style: italic; text-align: center; }
+.hero-right { padding-top: 2rem; }
+.hero-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); margin-bottom: 1.5rem; font-weight: 400; }
+.hero-name { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; line-height: 1.1; margin-bottom: 1.5rem; color: var(--text-primary); }
+.hero-name em { font-style: italic; color: var(--accent); }
+.hero-desc { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem; max-width: 500px; }
+.hero-motto { font-size: 1.3rem; font-style: italic; color: var(--text-muted); margin-bottom: 2.5rem; padding-left: 1.5rem; border-left: 2px solid var(--accent-soft); }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 4rem; }
+.stat-box { text-align: center; }
+.stat-number { font-size: 2.2rem; font-weight: 400; color: var(--accent); display: block; line-height: 1; margin-bottom: 0.5rem; }
+.stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; }
+.featured-section { padding: 0 4rem 4rem; max-width: 1100px; margin: 0 auto; }
+.featured-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+.featured-header h2 { font-size: 1.8rem; font-weight: 400; }
+.pub-item { background: var(--bg-card); border: 1px solid var(--border); padding: 1.8rem 2rem; margin-bottom: 1rem; transition: all 0.3s ease; position: relative; }
+.pub-item:hover { border-color: var(--accent-soft); box-shadow: 0 5px 20px var(--shadow); }
+.pub-item::before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.4s ease; }
+.pub-item:hover::before { width: 100%; }
+.pub-title { font-size: 1.05rem; font-weight: 400; margin-bottom: 0.5rem; line-height: 1.5; color: var(--text-primary); }
+.pub-venue { font-size: 0.85rem; color: var(--accent); font-style: italic; }
 .pub-author { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; }
-.scroll-indicator {
-    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    color: var(--text-muted); font-size: 0.8rem; animation: bounce 2s ease-in-out infinite;
-}
-@keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
-.scroll-indicator i { font-size: 1.2rem; }
+.info-section { padding: 0 4rem 4rem; max-width: 1100px; margin: 0 auto; }
+.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.info-item { padding: 1.5rem; border: 1px solid var(--border-light); background: var(--bg-card); transition: all 0.3s ease; }
+.info-item:hover { border-color: var(--accent-soft); }
+.info-item h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 0.5rem; font-weight: 400; }
+.info-item p { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
 @media (max-width: 768px) {
     .navbar { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .hero-top { grid-template-columns: 1fr; }
+    .hero-left { position: relative; top: 0; max-width: 280px; margin: 0 auto; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .featured-section, .info-section { padding: 0 1.5rem 3rem; }
+    .info-grid { grid-template-columns: 1fr; }
     .section { padding: 5rem 1.5rem 3rem; }
     .section-title { font-size: 2rem; }
-    .hero-btns { flex-direction: column; align-items: center; }
-    .hero-stats { gap: 1.5rem; }
 }
     </style>
 </head>
 <body>
-    <div class="bg-canvas"></div>
-    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
-    <div class="particles"></div>
-
     <nav class="navbar">
-        <div class="nav-logo">Taharimul</div>
+        <a href="index.html" class="nav-logo">Taharimul <span>Islam</span></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -262,100 +264,88 @@ body {
     </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge reveal"><i class="fas fa-robot"></i> AI Researcher & Cloud Engineer</div>
-            <div class="hero-avatar reveal"><i class="fas fa-user"></i></div>
-            <h1 class="hero-name reveal">Islam Taharimul</h1>
-            <p class="hero-title reveal">Master of Artificial Intelligence | Optimization Specialist | Cloud Technologist</p>
-            <p class="hero-motto reveal">Effort meets opportunity</p>
-            <div class="hero-btns reveal">
-                <a href="publications.html" class="btn btn-primary"><i class="fas fa-book"></i> View Publications</a>
-                <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Get in Touch</a>
+        <div class="hero-top">
+            <div class="hero-left reveal">
+                <div class="hero-portrait"><i class="fas fa-user"></i></div>
+                <p class="hero-portrait-caption">Islam Taharimul — Nanjing, China</p>
             </div>
-            <div class="hero-stats reveal">
-                <div class="stat-item"><span class="stat-number">6+</span><span class="stat-label">Publications</span></div>
-                <div class="stat-item"><span class="stat-number">5</span><span class="stat-label">Languages</span></div>
-                <div class="stat-item"><span class="stat-number">2</span><span class="stat-label">Degrees</span></div>
-                <div class="stat-item"><span class="stat-number">4+</span><span class="stat-label">Years Research</span></div>
+            <div class="hero-right">
+                <p class="hero-label reveal">Artificial Intelligence Researcher & Cloud Engineer</p>
+                <h1 class="hero-name reveal">Islam<br><em>Taharimul</em></h1>
+                <p class="hero-desc reveal">Master's graduate in Artificial Intelligence from NUIST. I design metaheuristic optimization algorithms — Differential Evolution and Particle Swarm Optimization — and build cloud infrastructure at ZStack. My work bridges computational intelligence with real-world engineering.</p>
+                <p class="hero-motto reveal">"Effort meets opportunity"</p>
+                <div class="hero-actions reveal">
+                    <a href="publications.html" class="btn btn-solid">View Publications</a>
+                    <a href="contact.html" class="btn">Get in Touch</a>
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator"><span>Scroll to explore</span><i class="fas fa-chevron-down"></i></div>
+
+        <div class="stats-row reveal">
+            <div class="stat-box"><span class="stat-number">6+</span><span class="stat-label">Publications</span></div>
+            <div class="stat-box"><span class="stat-number">5</span><span class="stat-label">Languages</span></div>
+            <div class="stat-box"><span class="stat-number">2</span><span class="stat-label">Degrees</span></div>
+            <div class="stat-box"><span class="stat-number">4+</span><span class="stat-label">Years Research</span></div>
+        </div>
     </section>
 
-    <section class="quick-info">
+    <section class="info-section">
         <div class="info-grid reveal">
-            <div class="info-card">
-                <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
-                <div class="info-title">Education</div>
-                <div class="info-text">M.S. in AI & B.S. in Electronic Information Engineering from NUIST, China</div>
+            <div class="info-item">
+                <h4>Education</h4>
+                <p>M.S. in AI & B.S. in Electronic Information Engineering from NUIST, China</p>
             </div>
-            <div class="info-card">
-                <div class="info-icon"><i class="fas fa-microscope"></i></div>
-                <div class="info-title">Research Focus</div>
-                <div class="info-text">Differential Evolution, Particle Swarm Optimization & Computational Intelligence</div>
+            <div class="info-item">
+                <h4>Research Focus</h4>
+                <p>Differential Evolution, Particle Swarm Optimization & Computational Intelligence</p>
             </div>
-            <div class="info-card">
-                <div class="info-icon"><i class="fas fa-cloud"></i></div>
-                <div class="info-title">Current Role</div>
-                <div class="info-text">Technical Support Engineer at ZStack Cloud, specializing in cloud infrastructure</div>
+            <div class="info-item">
+                <h4>Current Role</h4>
+                <p>Technical Support Engineer at ZStack Cloud, specializing in cloud infrastructure</p>
             </div>
-            <div class="info-card">
-                <div class="info-icon"><i class="fas fa-trophy"></i></div>
-                <div class="info-title">Recognition</div>
-                <div class="info-text">Gold Medalist, AI Global Innovation Competition & Provincial Government Scholar</div>
+            <div class="info-item">
+                <h4>Recognition</h4>
+                <p>Gold Medalist, AI Global Innovation Competition & Provincial Government Scholar</p>
             </div>
         </div>
     </section>
 
-    <section class="featured">
+    <section class="featured-section">
         <div class="featured-header reveal">
-            <h2 class="section-title">Featured Research</h2>
-            <a href="publications.html" class="btn btn-outline" style="padding:0.6rem 1.5rem;font-size:0.85rem;">View All <i class="fas fa-arrow-right"></i></a>
+            <h2>Featured Research</h2>
+            <a href="publications.html" class="btn" style="padding:0.5rem 1.2rem;font-size:0.8rem;">View All</a>
         </div>
         <div class="reveal">
-            <div class="pub-card">
+            <div class="pub-item">
                 <div class="pub-title">Improving Differential Evolution with Dual Operators and Success History Based Parameter Adaption</div>
                 <div class="pub-venue">Applied Soft Computing, Elsevier</div>
-                <div class="pub-author">1st Author</div>
+                <div class="pub-author">First Author</div>
             </div>
-            <div class="pub-card">
+            <div class="pub-item">
                 <div class="pub-title">Adaptive Crossover Selection for Differential Evolution to Solve Global Optimization Problems</div>
                 <div class="pub-venue">IEEE 12th ICIP</div>
-                <div class="pub-author">1st Author</div>
+                <div class="pub-author">First Author</div>
             </div>
-            <div class="pub-card">
+            <div class="pub-item">
                 <div class="pub-title">An Enhanced Differential Evolution Algorithm Based on Modified SHADE</div>
                 <div class="pub-venue">Journal of Applied Mathematics and Computing, Springer</div>
-                <div class="pub-author">1st Author</div>
+                <div class="pub-author">First Author</div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-social">
-            <a href="https://www.linkedin.com/in/mirrobin" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="social-link" title="GitHub (Add your link)"><i class="fab fa-github"></i></a>
-            <a href="#" class="social-link" title="WhatsApp (Add your link)"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="social-link" title="Facebook (Add your link)"><i class="fab fa-facebook-f"></i></a>
-            <a href="mailto:mtaharimulchina@gmail.com" class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/mirrobin" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:mtaharimulchina@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>Islam Taharimul &copy; 2025. Crafted with precision.</p>
+        <p>Islam Taharimul &mdash; 2025. Effort meets opportunity.</p>
     </footer>
 
     <script>
-function createParticles() {
-    const container = document.querySelector('.particles');
-    if (!container) return;
-    for (let i = 0; i < 50; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-        p.style.animationDelay = (Math.random() * 10) + 's';
-        p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
-        container.appendChild(p);
-    }
-}
 function initReveal() {
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -369,20 +359,7 @@ function setActiveNav() {
         if (link.getAttribute('href') === currentPage) link.classList.add('active');
     });
 }
-function navbarScroll() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15,15,35,0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
-        } else {
-            navbar.style.background = 'rgba(15,15,35,0.8)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-}
-document.addEventListener('DOMContentLoaded', () => { createParticles(); initReveal(); setActiveNav(); navbarScroll(); });
+document.addEventListener('DOMContentLoaded', () => { initReveal(); setActiveNav(); });
     </script>
 </body>
 </html>
