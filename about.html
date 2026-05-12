@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Islam Taharimul</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+:root {
+    --primary: #0f0f23;
+    --secondary: #1a1a2e;
+    --accent1: #e94560;
+    --accent2: #0f3460;
+    --accent3: #533483;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0b0;
+    --text-muted: #6a6a7a;
+    --glass: rgba(255,255,255,0.03);
+    --glass-border: rgba(255,255,255,0.08);
+    --card-bg: rgba(15,15,35,0.7);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--primary);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+.bg-canvas {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(233,69,96,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(83,52,131,0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(15,52,96,0.3) 0%, transparent 70%),
+        linear-gradient(135deg, #0f0f23 0%, #1a0a2e 25%, #0f1a3a 50%, #1a0a2e 75%, #0f0f23 100%);
+    animation: bgShift 20s ease-in-out infinite;
+}
+@keyframes bgShift {
+    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+    33% { filter: hue-rotate(15deg) brightness(1.05); }
+    66% { filter: hue-rotate(-10deg) brightness(0.95); }
+}
+.orb {
+    position: fixed; border-radius: 50%; filter: blur(80px);
+    z-index: -1; opacity: 0.4; animation: floatOrb linear infinite;
+}
+.orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(233,69,96,0.6), transparent 70%); top: 10%; left: -5%; animation-duration: 25s; }
+.orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(83,52,131,0.6), transparent 70%); top: 60%; right: -5%; animation-duration: 30s; animation-delay: -10s; }
+.orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(15,52,96,0.7), transparent 70%); bottom: 10%; left: 40%; animation-duration: 35s; animation-delay: -5s; }
+.orb-4 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(233,69,96,0.4), transparent 70%); top: 40%; left: 60%; animation-duration: 28s; animation-delay: -15s; }
+@keyframes floatOrb {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, -30px) scale(1.1); }
+    50% { transform: translate(-30px, 50px) scale(0.9); }
+    75% { transform: translate(40px, 40px) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+.particles {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1; pointer-events: none; overflow: hidden;
+}
+.particle {
+    position: absolute; width: 3px; height: 3px;
+    background: rgba(255,255,255,0.3); border-radius: 50%;
+    animation: particleFloat linear infinite;
+}
+@keyframes particleFloat {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; } 90% { opacity: 1; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+}
+.navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(15,15,35,0.8); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border); transition: all 0.3s ease;
+}
+.nav-logo {
+    font-size: 1.4rem; font-weight: 700;
+    background: linear-gradient(135deg, var(--accent1), var(--accent3));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    letter-spacing: 1px;
+}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+    color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
+    font-weight: 500; letter-spacing: 0.5px; transition: all 0.3s ease;
+    position: relative; padding: 0.5rem 0;
+}
+.nav-links a::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
+    transition: width 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.section { padding: 6rem 3rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; }
+.section-title {
+    font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem;
+    position: relative; display: inline-block;
+}
+.section-title::after {
+    content: ''; position: absolute; bottom: -10px; left: 0;
+    width: 60px; height: 4px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
+    border-radius: 2px;
+}
+.section-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; }
+.tag {
+    display: inline-block; padding: 0.3rem 0.8rem;
+    background: rgba(233,69,96,0.1); border: 1px solid rgba(233,69,96,0.2);
+    border-radius: 20px; font-size: 0.8rem; color: var(--accent1); margin: 0.2rem;
+}
+.footer {
+    padding: 3rem; text-align: center; border-top: 1px solid var(--glass-border);
+    margin-top: 4rem; color: var(--text-muted); font-size: 0.9rem;
+}
+.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+.social-link {
+    width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--glass); border: 1px solid var(--glass-border);
+    color: var(--text-secondary); text-decoration: none;
+    transition: all 0.3s ease; font-size: 1.1rem;
+}
+.social-link:hover {
+    background: var(--accent1); color: white; border-color: var(--accent1);
+    transform: translateY(-3px);
+}
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--primary); }
+::-webkit-scrollbar-thumb { background: var(--accent3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent1); }
+
+/* ABOUT PAGE */
+.about-hero { padding-top: 8rem; padding-bottom: 3rem; text-align: center; }
+.about-hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+.about-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+.profile-section { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; margin-bottom: 4rem; }
+.profile-image { position: sticky; top: 100px; }
+.profile-img-placeholder {
+    width: 100%; aspect-ratio: 1; border-radius: 20px;
+    background: linear-gradient(135deg, var(--accent1), var(--accent3));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem; color: white; border: 2px solid var(--glass-border);
+    box-shadow: 0 20px 60px rgba(233,69,96,0.2); overflow: hidden;
+}
+.profile-img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.profile-details { margin-top: 1.5rem; }
+.profile-details h3 { font-size: 1.3rem; margin-bottom: 0.3rem; }
+.profile-details p { color: var(--text-muted); font-size: 0.9rem; }
+.bio-text { font-size: 1.05rem; line-height: 1.9; color: var(--text-secondary); margin-bottom: 2rem; }
+.bio-text p { margin-bottom: 1.2rem; }
+.info-list { display: grid; gap: 1rem; }
+.info-row {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.5rem; background: var(--glass);
+    border: 1px solid var(--glass-border); border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.info-row:hover { border-color: rgba(233,69,96,0.3); background: rgba(233,69,96,0.05); }
+.info-row i {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent1), var(--accent3));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1rem; flex-shrink: 0;
+}
+.info-row-content { flex: 1; }
+.info-row-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.info-row-value { font-size: 0.95rem; font-weight: 500; color: var(--text-primary); }
+.awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.award-card {
+    background: var(--card-bg); backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border); border-radius: 16px;
+    padding: 1.8rem; transition: all 0.4s ease; position: relative; overflow: hidden;
+}
+.award-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 4px; height: 100%; background: linear-gradient(180deg, var(--accent1), var(--accent3));
+}
+.award-card:hover { transform: translateY(-5px); border-color: rgba(233,69,96,0.3); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+.award-icon { font-size: 2rem; color: var(--accent1); margin-bottom: 1rem; }
+.award-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4; }
+.award-year {
+    display: inline-block; padding: 0.2rem 0.8rem;
+    background: rgba(233,69,96,0.1); border-radius: 20px;
+    font-size: 0.8rem; color: var(--accent1); margin-bottom: 0.5rem;
+}
+.award-desc { font-size: 0.9rem; color: var(--text-muted); }
+.leadership-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.lead-card {
+    background: var(--card-bg); backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border); border-radius: 16px;
+    padding: 1.8rem; transition: all 0.4s ease;
+}
+.lead-card:hover { transform: translateY(-5px); border-color: rgba(233,69,96,0.3); }
+.lead-role { font-size: 1.1rem; font-weight: 600; color: var(--accent1); margin-bottom: 0.3rem; }
+.lead-org { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem; }
+.lead-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+@media (max-width: 768px) {
+    .profile-section { grid-template-columns: 1fr; }
+    .profile-image { position: relative; top: 0; max-width: 300px; margin: 0 auto; }
+    .navbar { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .section { padding: 5rem 1.5rem 3rem; }
+    .section-title { font-size: 2rem; }
+}
+    </style>
+</head>
+<body>
+    <div class="bg-canvas"></div>
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
+    <div class="particles"></div>
+
+    <nav class="navbar">
+        <div class="nav-logo">Taharimul</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-hero section">
+        <h1 class="reveal">About Me</h1>
+        <p class="reveal">A researcher, engineer, and lifelong learner navigating the intersection of artificial intelligence and real-world optimization.</p>
+    </div>
+
+    <section class="section profile-section">
+        <div class="profile-image reveal">
+            <div class="profile-img-placeholder">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-details">
+                <h3>Islam Taharimul</h3>
+                <p>Bangladesh &middot; Born January 20, 2000</p>
+            </div>
+        </div>
+        <div class="reveal">
+            <div class="bio-text">
+                <p>I am a Bangladeshi AI researcher and cloud technologist currently based in China. My academic journey at the Nanjing University of Information Science and Technology (NUIST) spans both a Bachelor's in Electronic Information Engineering and a Master's in Artificial Intelligence — a foundation that bridges hardware understanding with intelligent software systems.</p>
+                <p>My research sits at the cutting edge of <strong>computational intelligence</strong>, where I design and refine metaheuristic algorithms — particularly <strong>Differential Evolution</strong> and <strong>Particle Swarm Optimization</strong> — to solve complex real-world optimization problems. I believe the most elegant solutions emerge when mathematical rigor meets practical necessity.</p>
+                <p>Beyond the lab, I serve as a Technical Support Engineer at <strong>ZStack Cloud</strong>, where I translate technical expertise into tangible infrastructure solutions. This dual identity — researcher and practitioner — keeps me grounded in both theory and application.</p>
+                <p>My motto, <em>"Effort meets opportunity,"</em> reflects a philosophy shaped by years of cross-cultural study, leadership in student organizations, and a multilingual fluency that connects me to communities across Asia.</p>
+            </div>
+            <h3 style="margin-bottom:1.5rem;font-size:1.3rem;">Personal Information</h3>
+            <div class="info-list">
+                <div class="info-row"><i class="fas fa-passport"></i><div class="info-row-content"><div class="info-row-label">Passport</div><div class="info-row-value">EL0385518</div></div></div>
+                <div class="info-row"><i class="fas fa-phone"></i><div class="info-row-content"><div class="info-row-label">Phone</div><div class="info-row-value">+86 132 3652 5380</div></div></div>
+                <div class="info-row"><i class="fas fa-envelope"></i><div class="info-row-content"><div class="info-row-label">Email</div><div class="info-row-value">mtaharimulchina@gmail.com</div></div></div>
+                <div class="info-row"><i class="fab fa-weixin"></i><div class="info-row-content"><div class="info-row-label">WeChat</div><div class="info-row-value">mirrobin</div></div></div>
+                <div class="info-row"><i class="fab fa-linkedin"></i><div class="info-row-content"><div class="info-row-label">LinkedIn</div><div class="info-row-value">linkedin.com/in/mirrobin</div></div></div>
+                <div class="info-row"><i class="fas fa-globe"></i><div class="info-row-content"><div class="info-row-label">Nationality</div><div class="info-row-value">Bangladesh</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title reveal">Awards & Honors</h2>
+        <p class="section-subtitle reveal">Recognition earned through dedication to research, academics, and extracurricular excellence.</p>
+        <div class="awards-grid reveal">
+            <div class="award-card">
+                <div class="award-icon"><i class="fas fa-medal"></i></div>
+                <div class="award-year">2023</div>
+                <div class="award-title">Gold Medalist</div>
+                <div class="award-desc">Artificial Intelligence Global Innovation Competition</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon"><i class="fas fa-award"></i></div>
+                <div class="award-year">2024</div>
+                <div class="award-title">Jiangsu Provincial Government Scholarship</div>
+                <div class="award-desc">For Outstanding Students</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon"><i class="fas fa-award"></i></div>
+                <div class="award-year">2020</div>
+                <div class="award-title">Jiangsu Provincial Government Scholarship</div>
+                <div class="award-desc">For Outstanding Students</div>
+            </div>
+            <div class="award-card">
+                <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                <div class="award-year">2020</div>
+                <div class="award-title">1st Runner-up, Debate Competition</div>
+                <div class="award-desc">College of International Education, NUIST</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title reveal">Leadership & Service</h2>
+        <p class="section-subtitle reveal">Beyond research and engineering — building communities and supporting peers.</p>
+        <div class="leadership-grid reveal">
+            <div class="lead-card">
+                <div class="lead-role">President</div>
+                <div class="lead-org">Computer Electronics and Software Society (CESS)</div>
+                <div class="lead-desc">Organized software/hardware training sessions and coordinated cross-team technical activities for the student community.</div>
+            </div>
+            <div class="lead-card">
+                <div class="lead-role">President</div>
+                <div class="lead-org">Domestic Affairs Department (DAD)</div>
+                <div class="lead-desc">Led student welfare initiatives, organized non-academic activities, and managed dormitory-related administrative affairs.</div>
+            </div>
+            <div class="lead-card">
+                <div class="lead-role">Teacher Assistant</div>
+                <div class="lead-org">College of International Education, NUIST</div>
+                <div class="lead-desc">Graded assignments, prepared teaching materials, and assisted students and faculty with administrative tasks.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/mirrobin" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:mtaharimulchina@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>Islam Taharimul &copy; 2025. Effort meets opportunity.</p>
+    </footer>
+
+    <script>
+function createParticles() {
+    const container = document.querySelector('.particles');
+    if (!container) return;
+    for (let i = 0; i < 50; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
+        container.appendChild(p);
+    }
+}
+function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+}
+function setActiveNav() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) link.classList.add('active');
+    });
+}
+function navbarScroll() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(15,15,35,0.95)';
+            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+        } else {
+            navbar.style.background = 'rgba(15,15,35,0.8)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
+}
+document.addEventListener('DOMContentLoaded', () => { createParticles(); initReveal(); setActiveNav(); navbarScroll(); });
+    </script>
+</body>
+</html>
