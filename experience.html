@@ -3,231 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experience | Islam Taharimul</title>
+    <title>Experience — Islam Taharimul</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 :root {
-    --primary: #0f0f23;
-    --secondary: #1a1a2e;
-    --accent1: #e94560;
-    --accent2: #0f3460;
-    --accent3: #533483;
-    --text-primary: #f0f0f0;
-    --text-secondary: #a0a0b0;
-    --text-muted: #6a6a7a;
-    --glass: rgba(255,255,255,0.03);
-    --glass-border: rgba(255,255,255,0.08);
-    --card-bg: rgba(15,15,35,0.7);
+    --bg: #f5f2eb;
+    --bg-warm: #ede8dd;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #7a7a7a;
+    --text-light: #9a9a9a;
+    --accent: #8b4513;
+    --accent-warm: #a0522d;
+    --accent-soft: #d4a574;
+    --border: #e0d8cc;
+    --border-light: #ece6dc;
+    --shadow: rgba(0,0,0,0.06);
+    --shadow-hover: rgba(0,0,0,0.1);
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: var(--primary);
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    background: var(--bg);
     color: var(--text-primary);
-    line-height: 1.7;
+    line-height: 1.75;
     overflow-x: hidden;
     min-height: 100vh;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
 }
-.bg-canvas {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-    background: 
-        radial-gradient(ellipse at 20% 20%, rgba(233,69,96,0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(83,52,131,0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(15,52,96,0.3) 0%, transparent 70%),
-        linear-gradient(135deg, #0f0f23 0%, #1a0a2e 25%, #0f1a3a 50%, #1a0a2e 75%, #0f0f23 100%);
-    animation: bgShift 20s ease-in-out infinite;
-}
-@keyframes bgShift {
-    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
-    33% { filter: hue-rotate(15deg) brightness(1.05); }
-    66% { filter: hue-rotate(-10deg) brightness(0.95); }
-}
-.orb {
-    position: fixed; border-radius: 50%; filter: blur(80px);
-    z-index: -1; opacity: 0.4; animation: floatOrb linear infinite;
-}
-.orb-1 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(233,69,96,0.6), transparent 70%); top: 10%; left: -5%; animation-duration: 25s; }
-.orb-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(83,52,131,0.6), transparent 70%); top: 60%; right: -5%; animation-duration: 30s; animation-delay: -10s; }
-.orb-3 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(15,52,96,0.7), transparent 70%); bottom: 10%; left: 40%; animation-duration: 35s; animation-delay: -5s; }
-.orb-4 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(233,69,96,0.4), transparent 70%); top: 40%; left: 60%; animation-duration: 28s; animation-delay: -15s; }
-@keyframes floatOrb {
-    0% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(50px, -30px) scale(1.1); }
-    50% { transform: translate(-30px, 50px) scale(0.9); }
-    75% { transform: translate(40px, 40px) scale(1.05); }
-    100% { transform: translate(0, 0) scale(1); }
-}
-.particles {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1; pointer-events: none; overflow: hidden;
-}
-.particle {
-    position: absolute; width: 3px; height: 3px;
-    background: rgba(255,255,255,0.3); border-radius: 50%;
-    animation: particleFloat linear infinite;
-}
-@keyframes particleFloat {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; } 90% { opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
 }
 .navbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 1rem 3rem; display: flex; justify-content: space-between; align-items: center;
-    background: rgba(15,15,35,0.8); backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--glass-border); transition: all 0.3s ease;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: rgba(245,242,235,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
 }
 .nav-logo {
-    font-size: 1.4rem; font-weight: 700;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    letter-spacing: 1px;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
 }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-logo span {
+    color: var(--accent);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
-    color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;
-    font-weight: 500; letter-spacing: 0.5px; transition: all 0.3s ease;
-    position: relative; padding: 0.5rem 0;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
 }
 .nav-links a::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    width: 0; height: 2px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
-    transition: width 0.3s ease;
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.4s ease;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--text-primary); }
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
 .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-.section { padding: 6rem 3rem 4rem; max-width: 1200px; margin: 0 auto; position: relative; }
+.section { padding: 7rem 4rem 4rem; max-width: 1100px; margin: 0 auto; position: relative; }
+h1, h2, h3, h4 {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+}
 .section-title {
-    font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem;
-    position: relative; display: inline-block;
+    font-size: 2.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
 }
-.section-title::after {
-    content: ''; position: absolute; bottom: -10px; left: 0;
-    width: 60px; height: 4px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
-    border-radius: 2px;
+.section-title::before {
+    content: '';
+    position: absolute;
+    top: -15px; left: 0;
+    width: 40px; height: 2px;
+    background: var(--accent);
 }
-.section-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; max-width: 600px; }
+.section-subtitle {
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+.divider { width: 60px; height: 1px; background: var(--accent); margin: 2rem 0; }
 .tag {
-    display: inline-block; padding: 0.3rem 0.8rem;
-    background: rgba(233,69,96,0.1); border: 1px solid rgba(233,69,96,0.2);
-    border-radius: 20px; font-size: 0.8rem; color: var(--accent1); margin: 0.2rem;
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0.2rem;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-style: italic;
+    letter-spacing: 0.5px;
 }
 .footer {
-    padding: 3rem; text-align: center; border-top: 1px solid var(--glass-border);
-    margin-top: 4rem; color: var(--text-muted); font-size: 0.9rem;
+    padding: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
 }
-.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+.footer-social { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; }
 .social-link {
-    width: 44px; height: 44px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--glass); border: 1px solid var(--glass-border);
-    color: var(--text-secondary); text-decoration: none;
-    transition: all 0.3s ease; font-size: 1.1rem;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
 }
-.social-link:hover {
-    background: var(--accent1); color: white; border-color: var(--accent1);
-    transform: translateY(-3px);
-}
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+.social-link:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--primary); }
-::-webkit-scrollbar-thumb { background: var(--accent3); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent1); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-soft); }
 
 /* EXPERIENCE PAGE */
-.exp-hero { padding-top: 8rem; padding-bottom: 2rem; text-align: center; }
-.exp-hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
-.exp-hero p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-.exp-section { margin-bottom: 4rem; }
-.exp-card {
-    background: var(--card-bg); backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border); border-radius: 20px;
-    padding: 2.5rem; margin-bottom: 2rem; transition: all 0.4s ease;
-    position: relative; overflow: hidden;
-}
-.exp-card::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 100%; height: 4px; background: linear-gradient(90deg, var(--accent1), var(--accent3));
-}
-.exp-card:hover { transform: translateY(-5px); border-color: rgba(233,69,96,0.3); box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-.exp-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
-.exp-role { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); }
-.exp-org { font-size: 1.1rem; color: var(--accent1); font-weight: 500; margin-top: 0.3rem; }
-.exp-date {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    padding: 0.5rem 1rem; background: rgba(233,69,96,0.1);
-    border: 1px solid rgba(233,69,96,0.2); border-radius: 50px;
-    font-size: 0.85rem; color: var(--accent1); font-weight: 500;
-}
-.exp-body { color: var(--text-secondary); line-height: 1.8; }
-.exp-body ul { list-style: none; padding: 0; }
-.exp-body li { position: relative; padding-left: 1.5rem; margin-bottom: 0.8rem; }
-.exp-body li::before { content: '▸'; position: absolute; left: 0; color: var(--accent1); font-weight: 700; }
-.edu-card {
-    background: var(--card-bg); backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border); border-radius: 20px;
-    padding: 2.5rem; margin-bottom: 2rem; transition: all 0.4s ease;
-    position: relative; display: grid; grid-template-columns: auto 1fr;
-    gap: 2rem; align-items: start;
-}
-.edu-card::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 4px; height: 100%; background: linear-gradient(180deg, var(--accent1), var(--accent3));
-    border-radius: 20px 0 0 20px;
-}
-.edu-card:hover { transform: translateY(-5px); border-color: rgba(233,69,96,0.3); }
-.edu-icon {
-    width: 64px; height: 64px; border-radius: 16px;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 1.5rem; flex-shrink: 0;
-}
-.edu-content { flex: 1; }
-.edu-degree { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; }
-.edu-school { font-size: 1rem; color: var(--accent1); font-weight: 500; margin-bottom: 0.5rem; }
-.edu-date { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
-.edu-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
-.edu-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; }
-.training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.train-card {
-    background: var(--card-bg); backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border); border-radius: 16px;
-    padding: 1.8rem; transition: all 0.4s ease;
-}
-.train-card:hover { transform: translateY(-5px); border-color: rgba(233,69,96,0.3); }
-.train-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.train-icon {
-    width: 48px; height: 48px; border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent1), var(--accent3));
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 1.2rem;
-}
-.train-title { font-size: 1.1rem; font-weight: 600; }
-.train-org { font-size: 0.85rem; color: var(--text-muted); }
-.train-date { font-size: 0.8rem; color: var(--accent1); margin-bottom: 1rem; font-weight: 500; }
-.train-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-.train-desc ul { list-style: none; padding: 0; }
-.train-desc li { position: relative; padding-left: 1.2rem; margin-bottom: 0.4rem; }
-.train-desc li::before { content: '•'; position: absolute; left: 0; color: var(--accent1); }
+.page-header { padding-top: 8rem; padding-bottom: 2rem; max-width: 1100px; margin: 0 auto; padding-left: 4rem; padding-right: 4rem; }
+.page-header h1 { font-size: 3rem; font-weight: 400; margin-bottom: 0.5rem; }
+.page-header p { font-style: italic; color: var(--text-muted); font-size: 1.1rem; }
+.timeline { position: relative; padding-left: 0; }
+.timeline-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border-light); transition: all 0.3s ease; }
+.timeline-item:hover { background: var(--bg-card); padding-left: 1.5rem; padding-right: 1.5rem; margin: 0 -1.5rem; }
+.timeline-date { font-size: 0.85rem; color: var(--accent); font-style: italic; letter-spacing: 0.5px; padding-top: 0.3rem; }
+.timeline-content h3 { font-size: 1.3rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--text-primary); }
+.timeline-content .org { font-size: 1rem; color: var(--accent); margin-bottom: 1rem; font-style: italic; }
+.timeline-content ul { list-style: none; padding: 0; }
+.timeline-content li { position: relative; padding-left: 1.2rem; margin-bottom: 0.6rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; }
+.timeline-content li::before { content: '—'; position: absolute; left: 0; color: var(--accent-soft); }
+.edu-section { margin-top: 3rem; }
+.edu-card { display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem; padding: 2rem; border: 1px solid var(--border); background: var(--bg-card); margin-bottom: 1.5rem; transition: all 0.3s ease; }
+.edu-card:hover { border-color: var(--accent-soft); box-shadow: 0 8px 25px var(--shadow); }
+.edu-icon { width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.2rem; }
+.edu-info h3 { font-size: 1.2rem; font-weight: 400; margin-bottom: 0.3rem; }
+.edu-info .school { font-size: 0.95rem; color: var(--accent); font-style: italic; margin-bottom: 0.3rem; }
+.edu-info .date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem; }
+.edu-info .desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.8rem; }
+.edu-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.train-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.train-card { padding: 1.8rem; border: 1px solid var(--border); background: var(--bg-card); transition: all 0.3s ease; }
+.train-card:hover { border-color: var(--accent-soft); transform: translateY(-3px); box-shadow: 0 8px 25px var(--shadow); }
+.train-card h4 { font-size: 1.1rem; font-weight: 400; margin-bottom: 0.3rem; }
+.train-card .org { font-size: 0.85rem; color: var(--accent); font-style: italic; margin-bottom: 0.3rem; }
+.train-card .date { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem; }
+.train-card ul { list-style: none; padding: 0; }
+.train-card li { position: relative; padding-left: 1rem; margin-bottom: 0.4rem; font-size: 0.9rem; color: var(--text-secondary); }
+.train-card li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 @media (max-width: 768px) {
-    .edu-card { grid-template-columns: 1fr; gap: 1rem; }
-    .exp-header { flex-direction: column; }
+    .page-header { padding: 6rem 1.5rem 2rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .edu-card { grid-template-columns: 1fr; }
+    .train-grid { grid-template-columns: 1fr; }
+    .section { padding: 3rem 1.5rem; }
     .navbar { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .section { padding: 5rem 1.5rem 3rem; }
     .section-title { font-size: 2rem; }
 }
     </style>
 </head>
 <body>
-    <div class="bg-canvas"></div>
-    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div><div class="orb orb-4"></div>
-    <div class="particles"></div>
-
     <nav class="navbar">
-        <div class="nav-logo">Taharimul</div>
+        <a href="index.html" class="nav-logo">Taharimul <span>Islam</span></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -238,72 +219,74 @@ body {
         </ul>
     </nav>
 
-    <div class="exp-hero section">
+    <div class="page-header">
         <h1 class="reveal">Experience</h1>
         <p class="reveal">A journey through research, engineering, education, and continuous technical growth.</p>
     </div>
 
-    <section class="section exp-section">
+    <section class="section">
         <h2 class="section-title reveal">Work & Research</h2>
-        <div class="exp-card reveal">
-            <div class="exp-header">
-                <div><div class="exp-role">Technical Support Engineer</div><div class="exp-org">ZStack Cloud</div></div>
-                <div class="exp-date"><i class="fas fa-calendar-alt"></i> Sep 2025 – Present</div>
+        <div class="divider"></div>
+        <div class="timeline reveal">
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2025 — Present</div>
+                <div class="timeline-content">
+                    <h3>Technical Support Engineer</h3>
+                    <div class="org">ZStack Cloud</div>
+                    <ul>
+                        <li>Test cloud computing products and provide technical troubleshooting for deployment & configuration</li>
+                        <li>Support customer projects and resolve technical inquiries with precision and speed</li>
+                        <li>Collaborate with R&D teams to fix system issues and propose infrastructure optimizations</li>
+                        <li>Document test results and participate in internal knowledge sharing sessions</li>
+                    </ul>
+                </div>
             </div>
-            <div class="exp-body">
-                <ul>
-                    <li>Test cloud computing products and provide technical troubleshooting for deployment & configuration</li>
-                    <li>Support customer projects and resolve technical inquiries with precision and speed</li>
-                    <li>Collaborate with R&D teams to fix system issues and propose infrastructure optimizations</li>
-                    <li>Document test results and participate in internal knowledge sharing sessions</li>
-                </ul>
-            </div>
-        </div>
-        <div class="exp-card reveal">
-            <div class="exp-header">
-                <div><div class="exp-role">Research Assistant</div><div class="exp-org">School of Artificial Intelligence, NUIST</div></div>
-                <div class="exp-date"><i class="fas fa-calendar-alt"></i> Feb 2023 – Sep 2025</div>
-            </div>
-            <div class="exp-body">
-                <ul>
-                    <li>Conduct AI research focusing on differential evolution and particle swarm optimization for continuous & discrete real-world optimization problems</li>
-                    <li>Design, implement, and benchmark novel algorithmic variants against state-of-the-art methods</li>
-                    <li>Collaborate with faculty and peers on computational intelligence and IoT research projects</li>
-                    <li>Publish findings in IEEE, Springer, and Elsevier journals and conferences</li>
-                </ul>
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 2023 — Sep 2025</div>
+                <div class="timeline-content">
+                    <h3>Research Assistant</h3>
+                    <div class="org">School of Artificial Intelligence, NUIST</div>
+                    <ul>
+                        <li>Conduct AI research focusing on differential evolution and particle swarm optimization for continuous & discrete real-world optimization problems</li>
+                        <li>Design, implement, and benchmark novel algorithmic variants against state-of-the-art methods</li>
+                        <li>Collaborate with faculty and peers on computational intelligence and IoT research projects</li>
+                        <li>Publish findings in IEEE, Springer, and Elsevier journals and conferences</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section edu-section">
         <h2 class="section-title reveal">Education</h2>
-        <div class="edu-card reveal">
-            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div class="edu-content">
-                <div class="edu-degree">Master of Artificial Intelligence</div>
-                <div class="edu-school">Nanjing University of Information Science and Technology (NUIST)</div>
-                <div class="edu-date"><i class="fas fa-calendar"></i> September 2022 – July 2024</div>
-                <div class="edu-desc">Advanced study in machine learning, deep learning, and intelligent optimization algorithms. Thesis and research focused on enhancing metaheuristic algorithms for global optimization.</div>
-                <div class="edu-tags">
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">Deep Learning</span>
-                    <span class="tag">Optimization</span>
-                    <span class="tag">Computational Intelligence</span>
+        <div class="divider"></div>
+        <div class="reveal">
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="edu-info">
+                    <h3>Master of Artificial Intelligence</h3>
+                    <div class="school">Nanjing University of Information Science and Technology</div>
+                    <div class="date">September 2022 — July 2024</div>
+                    <div class="desc">Advanced study in machine learning, deep learning, and intelligent optimization algorithms. Thesis focused on enhancing metaheuristic algorithms for global optimization.</div>
+                    <div class="edu-tags">
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Optimization</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="edu-card reveal">
-            <div class="edu-icon"><i class="fas fa-university"></i></div>
-            <div class="edu-content">
-                <div class="edu-degree">Bachelor of Electronic Information Engineering</div>
-                <div class="edu-school">Nanjing University of Information Science and Technology (NUIST)</div>
-                <div class="edu-date"><i class="fas fa-calendar"></i> September 2018 – July 2022</div>
-                <div class="edu-desc">Foundation in electronics, signal processing, embedded systems, and software engineering. Built the technical groundwork that bridges hardware and AI-driven software solutions.</div>
-                <div class="edu-tags">
-                    <span class="tag">Signal Processing</span>
-                    <span class="tag">Embedded Systems</span>
-                    <span class="tag">Programming</span>
-                    <span class="tag">Circuit Design</span>
+            <div class="edu-card">
+                <div class="edu-icon"><i class="fas fa-university"></i></div>
+                <div class="edu-info">
+                    <h3>Bachelor of Electronic Information Engineering</h3>
+                    <div class="school">Nanjing University of Information Science and Technology</div>
+                    <div class="date">September 2018 — July 2022</div>
+                    <div class="desc">Foundation in electronics, signal processing, embedded systems, and software engineering. Built technical groundwork bridging hardware and AI-driven software.</div>
+                    <div class="edu-tags">
+                        <span class="tag">Signal Processing</span>
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">Programming</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -311,38 +294,30 @@ body {
 
     <section class="section">
         <h2 class="section-title reveal">Technical Training</h2>
-        <p class="section-subtitle reveal">Certified training programs that sharpened my practical engineering skills.</p>
-        <div class="training-grid reveal">
+        <div class="divider"></div>
+        <div class="train-grid reveal">
             <div class="train-card">
-                <div class="train-header">
-                    <div class="train-icon"><i class="fab fa-linux"></i></div>
-                    <div><div class="train-title">Linux System Administration</div><div class="train-org">Linux Foundation</div></div>
-                </div>
-                <div class="train-date">June 2022 – September 2022</div>
-                <div class="train-desc">
-                    <ul>
-                        <li>Command line mastery and file/permission management</li>
-                        <li>Process and service monitoring</li>
-                        <li>Shell scripting for automation</li>
-                        <li>Network configuration and remote login</li>
-                        <li>System troubleshooting and diagnostics</li>
-                    </ul>
-                </div>
+                <h4>Linux System Administration</h4>
+                <div class="org">Linux Foundation</div>
+                <div class="date">June 2022 — September 2022</div>
+                <ul>
+                    <li>Command line mastery and file/permission management</li>
+                    <li>Process and service monitoring</li>
+                    <li>Shell scripting for automation</li>
+                    <li>Network configuration and remote login</li>
+                    <li>System troubleshooting and diagnostics</li>
+                </ul>
             </div>
             <div class="train-card">
-                <div class="train-header">
-                    <div class="train-icon"><i class="fas fa-code"></i></div>
-                    <div><div class="train-title">C++ Programming</div><div class="train-org">CESS — Computer Electronics and Software Society</div></div>
-                </div>
-                <div class="train-date">August 2020 – October 2020</div>
-                <div class="train-desc">
-                    <ul>
-                        <li>Object-oriented programming fundamentals</li>
-                        <li>Classes, inheritance, and polymorphism</li>
-                        <li>STL containers and algorithms</li>
-                        <li>Practical problem-solving with C++</li>
-                    </ul>
-                </div>
+                <h4>C++ Programming</h4>
+                <div class="org">CESS — Computer Electronics and Software Society</div>
+                <div class="date">August 2020 — October 2020</div>
+                <ul>
+                    <li>Object-oriented programming fundamentals</li>
+                    <li>Classes, inheritance, and polymorphism</li>
+                    <li>STL containers and algorithms</li>
+                    <li>Practical problem-solving with C++</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -355,23 +330,10 @@ body {
             <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
             <a href="mailto:mtaharimulchina@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>Islam Taharimul &copy; 2025. Effort meets opportunity.</p>
+        <p>Islam Taharimul &mdash; 2025. Effort meets opportunity.</p>
     </footer>
 
     <script>
-function createParticles() {
-    const container = document.querySelector('.particles');
-    if (!container) return;
-    for (let i = 0; i < 50; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-        p.style.animationDelay = (Math.random() * 10) + 's';
-        p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
-        container.appendChild(p);
-    }
-}
 function initReveal() {
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
@@ -385,20 +347,7 @@ function setActiveNav() {
         if (link.getAttribute('href') === currentPage) link.classList.add('active');
     });
 }
-function navbarScroll() {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(15,15,35,0.95)';
-            navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
-        } else {
-            navbar.style.background = 'rgba(15,15,35,0.8)';
-            navbar.style.boxShadow = 'none';
-        }
-    });
-}
-document.addEventListener('DOMContentLoaded', () => { createParticles(); initReveal(); setActiveNav(); navbarScroll(); });
+document.addEventListener('DOMContentLoaded', () => { initReveal(); setActiveNav(); });
     </script>
 </body>
 </html>
