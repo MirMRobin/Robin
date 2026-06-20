@@ -316,6 +316,43 @@ h1, h2, h3, h4 {
     font-style: italic;
 }
 
+.cv-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+.cv-box i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+}
+.cv-box p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    font-family: 'Times New Roman', Times, Georgia, serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+.cv-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
 .contact-form-wrapper {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -483,6 +520,12 @@ textarea.form-input { min-height: 140px; resize: vertical; }
             <div class="location-box reveal">
                 <i class="fas fa-globe-asia"></i>
                 <p>Based in Shanghai, China — Open to global opportunities</p>
+            </div>
+
+            <div class="cv-box reveal">
+                <i class="fas fa-file-alt"></i>
+                <p>Download my academic curriculum vitae for details on research, publications, and experience.</p>
+                <a href="Academic.pdf" class="cv-btn" target="_blank"><i class="fas fa-download"></i> Download CV (PDF)</a>
             </div>
 
             <div class="availability reveal">
