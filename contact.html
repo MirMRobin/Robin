@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact — Islam Taharimul</title>
+    <meta name="description" content="Academic profile of Islam Taharimul: research in evolutionary optimization, publications, education, and cloud engineering experience.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 :root {
@@ -457,12 +458,13 @@ textarea.form-input { min-height: 140px; resize: vertical; }
     .contact-card:hover { padding-left: 1.5rem; margin: 0; }
 }
     </style>
+    
 <base target="_blank">
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="nav-logo">Taharimul <span>Islam</span></a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
@@ -507,6 +509,10 @@ textarea.form-input { min-height: 140px; resize: vertical; }
                     <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
                     <div class="contact-details"><h4>LinkedIn</h4><p>linkedin.com/in/mirrobin</p></div>
                 </a>
+                <a href="https://github.com/MirMRobin" target="_blank" rel="noopener noreferrer" class="contact-card">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <div class="contact-details"><h4>GitHub</h4><p>github.com/MirMRobin</p></div>
+                </a>
                 <a href="https://facebook.com/share/1XvY66LpEh" target="_blank" class="contact-card">
                     <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
                     <div class="contact-details"><h4>Facebook</h4><p>facebook.com/share/1XvY66LpEh</p></div>
@@ -519,24 +525,25 @@ textarea.form-input { min-height: 140px; resize: vertical; }
 
             <div class="location-box reveal">
                 <i class="fas fa-globe-asia"></i>
-                <p>Based in Shanghai, China — Open to global opportunities</p>
+                <p>Based in Shanghai, China · Open to global opportunities</p>
             </div>
 
             <div class="cv-box reveal">
                 <i class="fas fa-file-alt"></i>
                 <p>Download my academic curriculum vitae for details on research, publications, and experience.</p>
-                <a href="Academic.pdf" class="cv-btn" target="_blank"><i class="fas fa-download"></i> Download CV (PDF)</a>
+                <a href="Academic.pdf" class="cv-btn" target="_blank"><i class="fas fa-download"></i> Download Academic CV (PDF)</a>
             </div>
 
             <div class="availability reveal">
                 <span class="availability-dot"></span>
-                Available for PhD positions & research collaboration
+                Open to research and professional collaboration
             </div>
 
             <div class="social-large reveal">
                 <a href="https://www.linkedin.com/in/mirrobin" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/MirMRobin" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://facebook.com/share/1XvY66LpEh" target="_blank" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://metavirt.io" target="_blank" class="social-link" title="MetaVirt"><i class="fas fa-cloud"></i></a>
+                <a href="https://metavirt.co" target="_blank" class="social-link" title="MetaVirt"><i class="fas fa-cloud"></i></a>
                 <a href="mailto:iam@taharimulislam.com" class="social-link"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
@@ -570,37 +577,15 @@ textarea.form-input { min-height: 140px; resize: vertical; }
     <footer class="footer">
         <div class="footer-social">
             <a href="https://www.linkedin.com/in/mirrobin" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/MirMRobin" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://facebook.com/share/1XvY66LpEh" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
             <a href="mailto:iam@taharimulislam.com" class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>Islam Taharimul &mdash; 2026. Effort meets opportunity.</p>
+        <p>Islam Taharimul &mdash; 2000. Effort meets opportunity.</p>
     </footer>
 
     <script>
-function initReveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-}
-function setActiveNav() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) link.classList.add('active');
-    });
-}
-function toggleMenu() {
-    hamburger = document.getElementById("hamburger");
-    mobileNav = document.getElementById("mobileNav");
-    hamburger.classList.toggle("active");
-    mobileNav.classList.toggle("active");
-}
-document.addEventListener("DOMContentLoaded", function() {
-    var h = document.getElementById("hamburger");
-    if (h) h.addEventListener("click", toggleMenu);
-});
-document.addEventListener('DOMContentLoaded', () => { initReveal(); setActiveNav(); });
-    </script>
+(()=>{const menu=document.getElementById('hamburger'),mobile=document.getElementById('mobileNav');if(menu&&mobile){menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-controls','mobileNav');const close=()=>{menu.classList.remove('active');mobile.classList.remove('active');menu.setAttribute('aria-expanded','false')};menu.addEventListener('click',()=>{const open=menu.classList.toggle('active');mobile.classList.toggle('active',open);menu.setAttribute('aria-expanded',String(open))});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}const current=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-links a').forEach(a=>{if(a.getAttribute('href')===current){a.classList.add('active');a.setAttribute('aria-current','page')}});const els=document.querySelectorAll('.reveal');if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');io.unobserve(e.target)}}),{threshold:.08});els.forEach(e=>io.observe(e))}else els.forEach(e=>e.classList.add('active'))})();
+</script>
 </body>
 </html>

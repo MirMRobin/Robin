@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience — Islam Taharimul</title>
+    <meta name="description" content="Academic profile of Islam Taharimul: research in evolutionary optimization, publications, education, and cloud engineering experience.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 :root {
@@ -261,11 +262,12 @@ h1, h2, h3, h4 {
     .section-title { font-size: 2rem; }
 }
     </style>
+    
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="nav-logo">Taharimul <span>Islam</span></a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNav">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav-links">
@@ -310,10 +312,22 @@ h1, h2, h3, h4 {
                 </div>
             </div>
             <div class="timeline-item">
+                <div class="timeline-date">Apr 2020 — Jun 2022</div>
+                <div class="timeline-content">
+                    <h3>Junior Engineer (Electronics and Communication)</h3>
+                    <div class="org">Radian Enterprise · Dhaka, Bangladesh</div>
+                    <ul>
+                        <li>Installed, configured, and maintained electronic and communication systems.</li>
+                        <li>Diagnosed hardware and software issues and contributed to system design, testing, and implementation.</li>
+                        <li>Prepared technical reports and project progress records for management and clients.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
                 <div class="timeline-date">2024 — Present</div>
                 <div class="timeline-content">
                     <h3>Co-Founder</h3>
-                    <div class="org">MetaVirt Information Technologies Pvt. Ltd. — <a href="https://metavirt.io" target="_blank" style="color:var(--accent);">metavirt.io</a></div>
+                    <div class="org">MetaVirt Information Technologies Pvt. Ltd. — <a href="https://metavirt.co" target="_blank" style="color:var(--accent);">metavirt.co</a></div>
                     <ul>
                         <li>Co-founded an enterprise infrastructure software company providing private cloud, virtualization, software-defined storage, Kubernetes, and backup solutions for organizations in Bangladesh</li>
                         <li>Contributed to product vision and technical strategy</li>
@@ -322,7 +336,7 @@ h1, h2, h3, h4 {
                 </div>
             </div>
             <div class="timeline-item">
-                <div class="timeline-date">Feb 2023 — Present</div>
+                <div class="timeline-date">Feb 2023 — Aug 2026</div>
                 <div class="timeline-content">
                     <h3>Research Assistant</h3>
                     <div class="org">School of Artificial Intelligence, NUIST</div>
@@ -344,15 +358,10 @@ h1, h2, h3, h4 {
             <div class="edu-card">
                 <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
                 <div class="edu-info">
-                    <h3>Doctor of Philosophy in Artificial Intelligence</h3>
+                    <h3>PhD studies in Artificial Intelligence — withdrawn</h3>
                     <div class="school">Nanjing University of Information Science and Technology</div>
-                    <div class="date">September 2024 — Present</div>
-                    <div class="desc">Advanced research in evolutionary computation, metaheuristic optimization, and computational intelligence.</div>
-                    <div class="edu-tags">
-                        <span class="tag">Evolutionary Computation</span>
-                        <span class="tag">Optimization</span>
-                        <span class="tag">AI</span>
-                    </div>
+                    <div class="date">September 2024 — July 2026</div>
+                    <div class="desc">Doctoral studies; withdrawn in 2026.</div>
                 </div>
             </div>
             <div class="edu-card">
@@ -390,17 +399,18 @@ h1, h2, h3, h4 {
         <h2 class="section-title reveal">Technical Training</h2>
         <div class="divider"></div>
         <div class="train-grid reveal">
+
             <div class="train-card">
-                <h4>Practical Linux System Administration & Operations</h4>
-                <div class="org">Linux Foundation</div>
+                <h4>Python Data Science 101</h4>
+                <div class="org">IBM</div>
                 <div class="date">June 2020 — July 2020</div>
-                <ul>
-                    <li>Command line mastery and file/permission management</li>
-                    <li>Process and service monitoring</li>
-                    <li>Shell scripting for automation</li>
-                    <li>Network configuration and remote login</li>
-                    <li>System troubleshooting and diagnostics</li>
-                </ul>
+                <p>Python scripting and introductory data analysis in a Jupyter-based lab environment.</p>
+            </div>
+            <div class="train-card">
+                <h4>Innovation and Entrepreneurship</h4>
+                <div class="org">Tsinghua University</div>
+                <div class="date">February 2022 — April 2022</div>
+                <p>Opportunity assessment, business model validation, venture planning, and investor pitching.</p>
             </div>
             <div class="train-card">
                 <h4>C++ Programming</h4>
@@ -419,37 +429,15 @@ h1, h2, h3, h4 {
     <footer class="footer">
         <div class="footer-social">
             <a href="https://www.linkedin.com/in/mirrobin" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/MirMRobin" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://facebook.com/share/1XvY66LpEh" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
             <a href="mailto:iam@taharimulislam.com" class="social-link"><i class="fas fa-envelope"></i></a>
         </div>
-        <p>Islam Taharimul &mdash; 2026. Effort meets opportunity.</p>
+        <p>Islam Taharimul &mdash; 2000. Effort meets opportunity.</p>
     </footer>
 
     <script>
-function initReveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-}
-function setActiveNav() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) link.classList.add('active');
-    });
-}
-function toggleMenu() {
-    hamburger = document.getElementById("hamburger");
-    mobileNav = document.getElementById("mobileNav");
-    hamburger.classList.toggle("active");
-    mobileNav.classList.toggle("active");
-}
-document.addEventListener("DOMContentLoaded", function() {
-    var h = document.getElementById("hamburger");
-    if (h) h.addEventListener("click", toggleMenu);
-});
-document.addEventListener('DOMContentLoaded', () => { initReveal(); setActiveNav(); });
-    </script>
+(()=>{const menu=document.getElementById('hamburger'),mobile=document.getElementById('mobileNav');if(menu&&mobile){menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-controls','mobileNav');const close=()=>{menu.classList.remove('active');mobile.classList.remove('active');menu.setAttribute('aria-expanded','false')};menu.addEventListener('click',()=>{const open=menu.classList.toggle('active');mobile.classList.toggle('active',open);menu.setAttribute('aria-expanded',String(open))});mobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close()})}const current=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.nav-links a').forEach(a=>{if(a.getAttribute('href')===current){a.classList.add('active');a.setAttribute('aria-current','page')}});const els=document.querySelectorAll('.reveal');if('IntersectionObserver'in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('active');io.unobserve(e.target)}}),{threshold:.08});els.forEach(e=>io.observe(e))}else els.forEach(e=>e.classList.add('active'))})();
+</script>
 </body>
 </html>
